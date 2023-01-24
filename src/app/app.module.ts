@@ -14,6 +14,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
 import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -23,18 +24,19 @@ import {HttpClientModule} from "@angular/common/http";
     LogoComponent,
     Main,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatInputModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatInputModule,
+        HttpClientModule,
+        MatCardModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

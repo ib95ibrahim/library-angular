@@ -3,9 +3,10 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatTableDataSource} from "@angular/material/table";
 import {BookModelComponent} from "../interfaces/book-model/book-model.component";
 import {DataBooksService} from "../_services/data-books.service";
+import {Book} from "../interfaces/book";
 
 @Component({
-  selector: 'app-search-field',
+  selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
@@ -16,11 +17,13 @@ export class Main implements OnInit,AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   imgPath : string ='';
+  books: Book[] = [];
 
   constructor(private booksService : DataBooksService ) { }
 
   ngOnInit(): void {
     this.booksService.getBooks().subscribe(data =>{
+      this.books = data;
       this.dataSource.data = data;
        data.map(item => {
          this.imgPath = item.img;
@@ -36,5 +39,8 @@ export class Main implements OnInit,AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  completeRdv(id : any) {
+
+  }
 }
 
